@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Confetti from 'react-confetti'
 import './App.css';
 
 function App() {
-  const [isVisible, setIsVisible] = useState(false);
   const colorPalette = [
     '#f9eded', // 浅粉红
     '#f4c8c9', // 中等粉红
@@ -15,9 +14,6 @@ function App() {
     '#f8d7e0'  // 非常柔和的粉红
   ];
   
-  const toggleGift = () => {
-    setIsVisible(!isVisible);
-  };
   useEffect(() => {
     const floaters = document.querySelectorAll('.floater');
 
@@ -39,12 +35,10 @@ function App() {
       }
     });
   }, []);
-
   return (
-    <div className="container">
+    <div className="container"> 
       <img src="anniversary-img.png" alt="Happy Anniversary" className="anniversary-image" />
       <img src="anniversary-text.png" alt="Celebration Text" className="spinning-text" />
-      <button onClick={toggleGift} className="gift-button">Open Gift</button>
       <Confetti
       width="393px"
       height="852px"
@@ -52,30 +46,8 @@ function App() {
       gravity={0.03}
       initialVelocityY={20}
       opacity={50}
-      // drawShape={ctx => {
-      //   const shapeType = Math.random() > 0.5 ? 'heart' : 'petal';
-      //   const scale = 0.2; // 缩小到原来的十分之一
-      //   const x = 0;  // 画布中心位置的X坐标
-      //   const y = 0;  // 画布中心位置的Y坐标
-      //   ctx.lineWidth = 1;  // 设置线条宽度
-    
-      //   if (shapeType === 'heart') {
-      //     drawHeart(ctx, x, y, scale);
-      //   } else {
-      //     drawPetal(ctx, x, y, scale);
-      //   }
-    
-      //   ctx.stroke();
-      //   ctx.closePath();
-      // }}
       colors={colorPalette}
     />
-      {isVisible && (
-        <div className="gift-content">
-          <p>Here's a special gift just for you!</p>
-          
-        </div>
-      )}
     </div>
   );
 }
