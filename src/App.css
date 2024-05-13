@@ -1,42 +1,51 @@
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .anniversary-image {
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.gift-button {
-  font-size: 18px;
-  padding: 10px 20px;
-  color: white;
-  background-color: #f76c6c;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.floater {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: float 20s infinite linear;
 }
 
-.gift-content {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 5px;
-  background: #fff0f0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0); }
+  100% { transform: translate(-100px, 100px) rotate(360deg); }
+}
+
+.rotate-clockwise {
+  animation-name: rotate-clockwise;
+}
+
+.rotate-counterclockwise {
+  animation-name: rotate-counterclockwise;
+}
+
+@keyframes rotate-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counterclockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
 }
