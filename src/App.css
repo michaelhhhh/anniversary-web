@@ -1,0 +1,42 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.anniversary-image {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.gift-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #f76c6c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gift-content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
