@@ -30,14 +30,14 @@ function App() {
       }
     }
 
-    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [modalRef]);
   return (
     <div className="container"> 
-    <div className="invisible-area" onTouchStart={handleAreaClick}></div>
+    <div className="invisible-area" onClick={handleAreaClick}></div>
       <img src="anniversary-img.png" alt="Happy Anniversary" className="anniversary-image" />
       <img src="anniversary-text.png" alt="Celebration Text" className="spinning-text" />
       <Confetti
