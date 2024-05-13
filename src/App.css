@@ -13,13 +13,13 @@ body, html {
 }
 
 .invisible-area {
-  width: 20px; /* Define the size of the clickable area */
-  height: 20px;
+  width: 30px; /* Define the size of the clickable area */
+  height: 30px;
   cursor: pointer;
   opacity: 100; /* Make it invisible */
   background-color: white;
   position: absolute;
-  top: 65%; /* Center the area for demonstration */
+  top: 75%; /* Center the area for demonstration */
   left: 55%;
 }
 
@@ -52,56 +52,8 @@ body, html {
   border-radius: 10px;
   cursor: pointer;
 }
-.s1{
-  font-size: 100px;
-  line-height: 320px;
-  height: 320px;
-  width: 450px;
-  color: deeppink;
-  display: inline-block;
-}
-/* .confetti {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('confetti.gif'); 
-  background-repeat: repeat;
-  pointer-events: none;
-  animation: fall 10s linear infinite;
-} */
 
-.floater {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: float 20s infinite linear;
-}
 
-@keyframes float {
-  0% { transform: translate(0, 0) rotate(0); }
-  100% { transform: translate(-100px, 100px) rotate(360deg); }
-}
-
-.rotate-clockwise {
-  animation-name: rotate-clockwise;
-}
-
-.rotate-counterclockwise {
-  animation-name: rotate-counterclockwise;
-}
-
-@keyframes rotate-clockwise {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes rotate-counterclockwise {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
 @keyframes spin-text {
   from { transform: rotate(-10deg); }
   to { transform: rotate(10deg); }
