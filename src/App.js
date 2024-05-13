@@ -79,25 +79,6 @@ function App() {
     </div>
   );
 }
-function drawHeart(ctx, x, y, scale) {
-  ctx.beginPath();
-  ctx.moveTo(x + 75 * scale, y + 40 * scale);
-  ctx.bezierCurveTo(x + 75 * scale, y + 37 * scale, x + 70 * scale, y + 25 * scale, x + 50 * scale, y + 25 * scale);
-  ctx.bezierCurveTo(x + 20 * scale, y + 25 * scale, x + 20 * scale, y + 62.5 * scale, x + 20 * scale, y + 62.5 * scale);
-  ctx.bezierCurveTo(x + 20 * scale, y + 80 * scale, x + 40 * scale, y + 102 * scale, x + 75 * scale, y + 120 * scale);
-  ctx.bezierCurveTo(x + 110 * scale, y + 102 * scale, x + 130 * scale, y + 80 * scale, x + 130 * scale, y + 62.5 * scale);
-  ctx.bezierCurveTo(x + 130 * scale, y + 62.5 * scale, x + 130 * scale, y + 25 * scale, x + 100 * scale, y + 25 * scale);
-  ctx.bezierCurveTo(x + 85 * scale, y + 25 * scale, x + 75 * scale, y + 37 * scale, x + 75 * scale, y + 40 * scale);
-  ctx.fill();
-}
-
-function drawPetal(ctx, x, y, scale) {
-  ctx.beginPath();
-  for (let i = 0; i < 4; i++) {
-    ctx.ellipse(x + 75 * scale, y + 40 * scale, 20 * scale, 40 * scale, Math.PI / 4 + i * (Math.PI / 2), 0, 2 * Math.PI);
-  }
-  ctx.fill();
-}
 
 
 export default App;
