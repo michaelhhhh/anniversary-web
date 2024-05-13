@@ -12,6 +12,15 @@ body, html {
   flex-direction: column;
 }
 
+.invisible-area {
+  width: 20px; /* Define the size of the clickable area */
+  height: 20px;
+  cursor: pointer;
+  opacity: 0; /* Make it invisible */
+  position: absolute;
+  top: 65%; /* Center the area for demonstration */
+  left: 55%;
+}
 
 .anniversary-image {
   width: 100%;
@@ -95,4 +104,36 @@ body, html {
 @keyframes spin-text {
   from { transform: rotate(-10deg); }
   to { transform: rotate(10deg); }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 80%;
+  border-radius: 20px;  /* 圆角的大小 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  .gift-card {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;  /* 圆角的大小 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  }
+  .close-button {
+    position: absolute;
+    top: 2px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #aaa; /* Light gray for visibility, adjust as needed */
+    cursor: pointer;
+  }
+
+  .close-button:hover {
+    color: black; /* Change color on hover for better visibility */
+  }
 }

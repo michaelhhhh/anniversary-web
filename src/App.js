@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Confetti from 'react-confetti'
 import './App.css';
 
@@ -13,30 +13,31 @@ function App() {
     '#e2afb9', // 介于中深度的粉红
     '#f8d7e0'  // 非常柔和的粉红
   ];
-  
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAreaClick = () => {
+    setShowModal(true);
+  };
+  const modalRef = useRef(null);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   useEffect(() => {
-    const floaters = document.querySelectorAll('.floater');
-
-    floaters.forEach(floater => {
-      // Randomize start positions and animation durations
-      const xInitial = Math.random() * window.innerWidth;
-      const yInitial = Math.random() * window.innerHeight;
-      const duration = Math.random() * 5 + 5; // 5 to 10 seconds
-
-      floater.style.left = `${xInitial}px`;
-      floater.style.top = `${yInitial}px`;
-      floater.style.animationDuration = `${duration}s`;
-
-      // Randomize rotation direction
-      if (Math.random() > 0.5) {
-        floater.classList.add('rotate-clockwise');
-      } else {
-        floater.classList.add('rotate-counterclockwise');
+    function handleClickOutside(event) {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        handleCloseModal();
       }
-    });
-  }, []);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [modalRef]);
   return (
     <div className="container"> 
+    <div className="invisible-area" onClick={handleAreaClick}></div>
       <img src="anniversary-img.png" alt="Happy Anniversary" className="anniversary-image" />
       <img src="anniversary-text.png" alt="Celebration Text" className="spinning-text" />
       <Confetti
@@ -48,6 +49,12 @@ function App() {
       opacity={50}
       colors={colorPalette}
     />
+    {showModal && (
+        <div className="modal" ref={modalRef}>
+          <span className="close-button" onClick={handleCloseModal}>&times;</span>
+          <img src="gift-card.png" alt="Happy Anniversary" className="gift-card" />
+        </div>
+      )}
     </div>
   );
 }
