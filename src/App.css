@@ -16,10 +16,10 @@ body, html {
   width: 30px; /* Define the size of the clickable area */
   height: 30px;
   cursor: pointer;
-  opacity: 100; /* Make it invisible */
+  opacity: 0; /* Make it invisible */
   background-color: white;
   position: absolute;
-  top: 75%; /* Center the area for demonstration */
+  top: 70%; /* Center the area for demonstration */
   left: 55%;
 }
 
