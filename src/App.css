@@ -19,7 +19,7 @@ body, html {
   opacity: 100; /* Make it invisible */
   background-color: white;
   position: absolute;
-  top: 85%; /* Center the area for demonstration */
+  top: 75%; /* Center the area for demonstration */
   left: 55%;
 }
 
